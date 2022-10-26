@@ -1,0 +1,26 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_box{
+  display: flex;
+  align-items: center;
+  height:200px;
+}
+
+.result_box{
+  border-radius: 25px;
+  background: #a8a8a5;
+  color: rgb(4, 51, 4);
+  padding: 10px 50px;
+  width: auto;
+  height: auto;
+}
+
+.source_box{
+  display: flex;
+  align-items: center;
+  height: 200px;
+}
