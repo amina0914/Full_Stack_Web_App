@@ -1,6 +1,7 @@
 /**
  * This is a module that exports a function that reads a file information and returns it
- * 
+ * @Date: 
+ * @Author:
  * */
 const fs = require("fs/promises");
 
@@ -15,7 +16,8 @@ export async function validate (file){
     throw e;
   }
 }
- 
+
+// This function reads data from a file and returns it as an array
 export async function read(file) {
   try {
     let data = await fs.readFile(file, "utf-8");
