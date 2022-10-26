@@ -3,7 +3,7 @@
  * @Date: 
  * @Author:
  * */
-const fs = require("fs/promises");
+import * as fs from "fs/promises";
 
 //Not sure if need to validate the file
 export async function validate (file){
@@ -22,10 +22,13 @@ export async function read(file) {
   try {
     let data = await fs.readFile(file, "utf-8");
     console.log("File read");
-    return JSON.parse(data).sort();
+    console.lof("data type" + typeof  data);
+    console.lof("json parse type " + typeof  JSON.parse(data));
+    return JSON.parse(data);
   } catch (err) {
     console.error(err.message);
-    throw e;
+    throw err;
   }
 }
+
 
