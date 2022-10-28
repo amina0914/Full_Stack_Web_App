@@ -9,3 +9,4 @@ temp*
 markdown_tools/
 **/node_modules/
 .ssh/
+./controllers/keys.mjs
