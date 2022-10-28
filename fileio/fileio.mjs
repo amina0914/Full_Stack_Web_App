@@ -22,8 +22,6 @@ export async function read(file) {
   try {
     let data = await fs.readFile(file, "utf-8");
     console.log("File read");
-    console.lof("data type" + typeof  data);
-    console.lof("json parse type " + typeof  JSON.parse(data));
     return JSON.parse(data);
   } catch (err) {
     console.error(err.message);
