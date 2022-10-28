@@ -10,7 +10,7 @@ function setup() {
 }
 
 /**
- * First Fetch to obtain the list of all symbols
+ * First Fetch to obtain the list of all symbols of stocks
  */
 async function fetch1() {
   // Fetch TODO
@@ -18,6 +18,7 @@ async function fetch1() {
 
 /**
  * Second Fetch, executed only after pressing the submit button
+ * Updates the DOM with the result of the Search query
  * @param {event} e 
  */
 async function fetch2(e) {
