@@ -6,8 +6,10 @@
 import * as fs from "fs/promises";
 
 //Not sure if need to validate the file
+// check the path, is reg file then read 
 export async function validate (file){
   try {
+    // await fs.access(path);
     let stats = await fs.stat(file);
     console.log("File is valid!");
     return stats.isFile();
