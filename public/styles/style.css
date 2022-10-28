@@ -4,13 +4,13 @@ body{
   align-items: center;
 }
 
-.search_box{
+#search_box{
   display: flex;
   align-items: center;
   height:200px;
 }
 
-.result_box{
+#result_box{
   border-radius: 25px;
   background: #a8a8a5;
   color: rgb(4, 51, 4);
@@ -19,7 +19,7 @@ body{
   height: auto;
 }
 
-.source_box{
+#source_box{
   display: flex;
   align-items: center;
   height: 200px;
