@@ -1,7 +1,7 @@
 import {key} from "./keys.mjs";
 import fetch from 'node-fetch';
 
-async function fetchAPI(userRequest) {
+export async function fetchAPI(userRequest) {
   let data;
   let dataResponse;
   let URI = new URL("https://finnhub.io/api/v1/quote");
@@ -19,10 +19,10 @@ async function fetchAPI(userRequest) {
 }
 
 
-// Using this function for testing purposes 
-async function yo() {
-  let result = await fetchAPI('AAPL')
-  console.log(result);
-}
+// // Using this function for testing purposes 
+// async function yo() {
+//   let result = await fetchAPI('AAPL')
+//   console.log(result);
+// }
   
-yo() 
+// yo() 
