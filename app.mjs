@@ -6,15 +6,7 @@ const app = express();
 const port = 3000;
 
 // This is the homepage, in other words, the /public/index.html
-app.get('/', async (req, res) => {
-  if (req.query.name !== null) {
-    let single = new Singleton();
-    let data = await single.getInstance();
-    res.send({ message: "Test " + JSON.stringify(data) });
-  } else {
-    res.status(404).send("404 not found");
-  }
-});
+app.use(express.static('public'))
 
 // This is the request to obtain data
 app.get('/Symbol', async (req, res) => {
@@ -35,8 +27,6 @@ app.get('/Symbol', async (req, res) => {
     }
   }
 });
-
-app.use(express.static('public'))
 
 app.listen(port, () => {
   console.log(`Testing app at http://localhost:${port}`);
