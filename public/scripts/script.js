@@ -34,9 +34,10 @@ async function getSymbols() {
 async function getStock(e) {
   e.preventDefault();
 
-  // Fetch TODO
+  // Retrieve user input
   let input = document.querySelector("#stock-choice").value;
 
+  // fetch url with input as the query paramter
   let url = `http://localhost:3000/Search?name=${input}`
 
   let response = await fetch(url)
@@ -44,15 +45,20 @@ async function getStock(e) {
   if (response.ok) {
     content = await response.json();
   }
+
+  // Display the result
   let result = document.querySelector("#result");
-  
+
+  // If previous request was an error, remove the error class
   if (result.classList.contains("error")) {
     result.classList.remove("error");
   }
 
+  // Check if requested stock exists
+  // If the current price is 0, then it is essentially non existent
   if (content.c == 0) {
-    result.textContent = `ERROR: ${input} does not exist`;
     result.classList.add("error");
+    result.textContent = `ERROR: ${input} does not exist`;
   } else {
     result.textContent = `Current Price of ${input} is: $${content.c}`;
   }
