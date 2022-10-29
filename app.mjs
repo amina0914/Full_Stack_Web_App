@@ -8,6 +8,11 @@ const port = 3000;
 // This is the homepage, in other words, the /public/index.html
 app.use(express.static('public'))
 
+// Default 404 status
+app.get('/', (req, res) => {
+  res.status(404).send("404 not found");
+})
+
 // This is the request to obtain data
 app.get('/Symbol', async (req, res) => {
   // If there are no query, return json list of all Symbols
@@ -18,13 +23,7 @@ app.get('/Symbol', async (req, res) => {
   } else {
     // Request to obtain stock information
     let result = await fetchAPI(req.query.name);
-    // If Stock does not exist / current price = 0
-    if (result.c == 0) {
-      res.status(404).send("404 not found");
-    }
-    else {
-      res.json(result);
-    }
+    res.json(result);
   }
 });
 
