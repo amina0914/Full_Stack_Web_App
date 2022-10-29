@@ -1,0 +1,23 @@
+{
+  "name": "520-a3-tat-turdalieva",
+  "version": "1.0.0",
+  "description": "Members: Amina Turdalieva, Jacky Tat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/520-01-F22/section02/a3-team04/520-a3-tat-turdalieva.git"
+  },
+  "author": "Amina Turdalieva & Jacky Tat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/520-01-F22/section02/a3-team04/520-a3-tat-turdalieva/issues"
+  },
+  "homepage": "https://gitlab.com/520-01-F22/section02/a3-team04/520-a3-tat-turdalieva#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.2.10"
+  }
+}

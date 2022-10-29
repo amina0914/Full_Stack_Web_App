@@ -20,7 +20,8 @@ export class Singleton {
     if (instance.data) {
       return instance.data
     }
-    let file = '../files/basicNasdaq.json';
+    // let file = '../files/basicNasdaq.json';
+    let file = './files/basicNasdaq.json';
     validate(file);
     let symbolsArray = await read(file);
     instance = { "data": {symbolsArray} }
