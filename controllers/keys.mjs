@@ -1,1 +1,0 @@
-export const key = { key : "cdcojoiad3ic4dieek6gcdcojoiad3ic4dieek70"};
