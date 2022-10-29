@@ -8,11 +8,6 @@ const port = 3000;
 // This is the homepage, in other words, the /public/index.html
 app.use(express.static('public'))
 
-// Default 404 status
-app.get('/', (req, res) => {
-  res.status(404).send("404 not found");
-})
-
 // This is the request to obtain data
 app.get('/Symbol', async (req, res) => {
   // If there are no query, return json list of all Symbols
@@ -26,6 +21,11 @@ app.get('/Symbol', async (req, res) => {
     res.json(result);
   }
 });
+
+// Default 404 status
+app.use('/', (req, res) => {
+  res.status(404).send("404 not found");
+})
 
 app.listen(port, () => {
   console.log(`Testing app at http://localhost:${port}`);
