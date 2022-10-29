@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/520-01-F22/section02/a3-team04/520-a3-tat-turdalieva#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "node-fetch": "^3.2.10"
   }
 }
