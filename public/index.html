@@ -12,10 +12,13 @@
 
 <body>
   <div id="search_box">
-    <input list="stock-list" id="stock-choice" name="stock-choice" placeholder="Search..">
-    <datalist id="stock-list">
-    </datalist>
-    <button type="submit">GO!</button>
+    <form>
+      <input type="text" list="stock-list" id="stock-choice" name="stock-choice" placeholder="Search.." required />
+      <datalist id="stock-list">
+      </datalist>
+      <input type="submit" value="GO!" />
+    </form>
+
   </div>
   <div id="result_box">
     <p id="result">Welcome !!</p>
