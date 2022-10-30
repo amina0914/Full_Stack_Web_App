@@ -10,17 +10,25 @@ app.use(express.static('public'))
 
 // This is the request to obtain data
 app.get('/Symbol', async (req, res) => {
-  // If there are no query, return json list of all Symbols
-  if (req.query.name == null) {
-    let single = new Singleton();
-    let data = await single.getInstance();
-    res.json(data.symbolsArray);
-  } else {
-    // Request to obtain stock information
-    let result = await fetchAPI(req.query.name);
-    res.json(result);
+  let single = new Singleton();
+  let data;
+  try {
+    data = await single.getInstance();
+  } catch {
+    res.status(404).send("404 not found");
   }
+  res.json(data.symbolsArray);
 });
+
+app.get('/Search', async (req, res) => {
+  let result;
+  try {
+    result = await fetchAPI(req.query.name);
+  } catch {
+    res.status(404).send("404 not found");
+  }
+  res.json(result);
+})
 
 // Default 404 status
 app.use('/', (req, res) => {
