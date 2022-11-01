@@ -1,6 +1,11 @@
 import {key} from "./keys.mjs";
 import fetch from 'node-fetch';
 
+/**
+ * Export Third party API that returns Stock Information
+ * @param {URL} userRequest Queries that the User inputs in Client Side for third party API
+ * @returns 
+ */
 export async function fetchAPI(userRequest) {
   let data;
   let dataResponse;
@@ -17,12 +22,3 @@ export async function fetchAPI(userRequest) {
   }
   return data;
 }
-
-
-// // Using this function for testing purposes 
-// async function yo() {
-//   let result = await fetchAPI('AAPL')
-//   console.log(result);
-// }
-  
-// yo() 
