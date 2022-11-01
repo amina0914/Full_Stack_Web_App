@@ -13,7 +13,6 @@ body{
 #result_box{
   border-radius: 25px;
   background: #a8a8a5;
-  color: rgb(4, 51, 4);
   padding: 10px 50px;
   width: auto;
   height: auto;
@@ -23,4 +22,8 @@ body{
   display: flex;
   align-items: center;
   height: 200px;
+}
+
+.error {
+  color: red;
 }
