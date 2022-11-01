@@ -12,6 +12,7 @@ function setup() {
 
 /**
  * First Fetch to obtain the list of all symbols of stocks
+ * And add them to the datalist
  */
 async function getSymbols() {
   let url = new URL("http://localhost:3000/Symbol")
