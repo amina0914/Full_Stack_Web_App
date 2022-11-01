@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 /**
  * Export Third party API that returns Stock Information
  * @param {URL} userRequest Queries that the User inputs in Client Side for third party API
- * @returns 
+ * @returns JSON data
  */
 export async function fetchAPI(userRequest) {
   let data;
