@@ -20,7 +20,6 @@ export class Singleton {
     if (instance.data) {
       return instance.data
     }
-    // let file = '../files/basicNasdaq.json';
     let file = './files/basicNasdaq.json';
     validate(file);
     let symbolsArray = await read(file);
@@ -28,13 +27,3 @@ export class Singleton {
     return instance.data
   }
 }
-
-
-// // This following method is to test the Singleton, thats how to call it from another class 
-// async function yo() {
-//   let single = new Singleton();
-//   let data = await single.getInstance();
-//   console.log(data);
-// }
-    
-// yo() 
