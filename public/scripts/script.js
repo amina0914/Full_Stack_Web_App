@@ -14,7 +14,8 @@ function setup() {
  * First Fetch to obtain the list of all symbols of stocks
  */
 async function getSymbols() {
-  let response = await fetch("http://localhost:3000/Symbol")
+  let url = new URL("http://localhost:3000/Symbol")
+  let response = await fetch(url)
   let content;
   if (response.ok) {
     content = await response.json();
@@ -38,7 +39,7 @@ async function getStock(e) {
   let input = document.querySelector("#stock-choice").value;
 
   // fetch url with input as the query paramter
-  let url = `http://localhost:3000/Search?name=${input}`
+  let url = new URL(`http://localhost:3000/Search?name=${input}`)
 
   let response = await fetch(url)
   let content;
