@@ -30,7 +30,7 @@ async function getSymbols() {
 /**
  * Second Fetch, executed only after pressing the submit button
  * Updates the DOM with the result of the Search query
- * @param {event} e 
+ * @param {event} e Event Object
  */
 async function getStock(e) {
   e.preventDefault();
