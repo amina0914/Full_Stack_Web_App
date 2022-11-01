@@ -1,13 +1,15 @@
 /**
  * This is a module that exports a function that reads a file information and returns it
  * @Date: 
- * @Author:
+ * @Author: Amina
  * */
 import * as fs from "fs/promises";
 
-//Not sure if need to validate the file
-// check the path, is reg file then read 
-export async function validate (file){
+/**
+ * Validate File Path
+ * @param {File} file File Object
+ */
+export async function validate(file) {
   try {
     // await fs.access(path);
     let stats = await fs.stat(file);
@@ -19,7 +21,11 @@ export async function validate (file){
   }
 }
 
-// This function reads data from a file and returns it as an array
+/**
+ * Read data from file and return as JSON array
+ * @param {File} file File Object
+ * @returns JSON array
+ */
 export async function read(file) {
   try {
     let data = await fs.readFile(file, "utf-8");
