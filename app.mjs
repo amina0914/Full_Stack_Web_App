@@ -24,6 +24,8 @@ app.use(express.static('public'))
  * @param  {Request} req Request object
  * @param  {Response} res Response object
  */
+
+//First endpoint that calls the singleton reading from a file to get all the symbols
 app.get('/Symbol', async (req, res) => {
   let single = new Singleton();
   let data;
@@ -35,6 +37,7 @@ app.get('/Symbol', async (req, res) => {
   res.json(data.symbolsArray);
 });
 
+// Second endpoint that fetches specific info about a symbol when one is provided by the user 
 app.get('/Search', async (req, res) => {
   let result;
   try {
