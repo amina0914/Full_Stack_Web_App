@@ -7,17 +7,36 @@ import * as fs from "fs/promises";
 
 /**
  * Validates File Path
+ * First checks if the file has the right permissions, then checks if it is indeed a file
  * @param {File} file File Object
  */
 export async function validate(file) {
-  try {
-    // await fs.access(path);
-    let stats = await fs.stat(file);
+  try {  
+    let valid = await exists(file);
+    let stats;
+    if (valid) {
+      stats = await fs.stat(file);
+    }
     console.log("File is valid!");
     return stats.isFile();
+   
   } catch (e) {
     console.error("Error occured, file not valid: " + e);
     throw e;
+  }
+}
+
+/**
+ * Checks if the file exists and has the permissions
+ * @param {Path} path Path Object which represents the path to the file to read
+ * @returns JSON array
+ */
+async function exists (path) {  
+  try {
+    await fs.access(path);
+    return true;
+  } catch (e) {
+    return false;
   }
 }
 
