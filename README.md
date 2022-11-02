@@ -5,6 +5,11 @@ Enter the following on the command line in the root folder of the project:
 
 node app.mjs
 
+## Team Members
+
+- Jacky Tat
+- Amina Turdalieva
+
 ## Purpose of the application is to provide specific stock information through user input.
 
 ## App Functions
