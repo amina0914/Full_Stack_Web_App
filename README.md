@@ -1,7 +1,7 @@
 # Web Express Application that is hosted on http://localhost:3000/
 
 To run the project  
-Enter the following on the command line:
+Enter the following on the command line in the root folder of the project:
 
 node app.mjs
 
