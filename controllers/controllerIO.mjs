@@ -1,11 +1,9 @@
 /**
- * This is a module exports a singleton object/class that reads from the file contents
- * and returns the array of symbols 
- * @Date: 
- * @Author:
+ * This is a module exports a singleton object/class that validates a file and reads it
+ * returning an array of symbols from the file
+ * @Date: 02-22-2022
+ * @Author: Amina Turdalieva 
  * */
-
-
 import { validate, read } from "../fileio/fileio.mjs";
 
 let instance;
@@ -20,21 +18,11 @@ export class Singleton {
     if (instance.data) {
       return instance.data
     }
-    // let file = '../files/basicNasdaq.json';
     let file = './files/basicNasdaq.json';
     validate(file);
+    // fills the symbolsArray with the data read from the provided file and returns it
     let symbolsArray = await read(file);
     instance = { "data": {symbolsArray} }
     return instance.data
   }
 }
-
-
-// // This following method is to test the Singleton, thats how to call it from another class 
-// async function yo() {
-//   let single = new Singleton();
-//   let data = await single.getInstance();
-//   console.log(data);
-// }
-    
-// yo() 

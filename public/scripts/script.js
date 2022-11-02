@@ -1,3 +1,11 @@
+/**
+ * This is the script file that is responsible for linking the backend to the frontend 
+ * of the webpage. The fetching methods are used to fetch from the API the data about the stocks.
+ * Once the data is fetched, it is displayed to the user. 
+ * @Date: 02-11-2022
+ * @Author: Jacky Tat
+ * */
+
 "use strict";
 
 document.addEventListener('DOMContentLoaded', setup)
@@ -12,9 +20,11 @@ function setup() {
 
 /**
  * First Fetch to obtain the list of all symbols of stocks
+ * And add them to the datalist
  */
 async function getSymbols() {
-  let response = await fetch("http://localhost:3000/Symbol")
+  let url = new URL("http://localhost:3000/Symbol")
+  let response = await fetch(url)
   let content;
   if (response.ok) {
     content = await response.json();
@@ -29,7 +39,7 @@ async function getSymbols() {
 /**
  * Second Fetch, executed only after pressing the submit button
  * Updates the DOM with the result of the Search query
- * @param {event} e 
+ * @param {event} e Event Object
  */
 async function getStock(e) {
   e.preventDefault();
@@ -38,7 +48,7 @@ async function getStock(e) {
   let input = document.querySelector("#stock-choice").value;
 
   // fetch url with input as the query paramter
-  let url = `http://localhost:3000/Search?name=${input}`
+  let url = new URL(`http://localhost:3000/Search?name=${input}`)
 
   let response = await fetch(url)
   let content;
@@ -56,7 +66,7 @@ async function getStock(e) {
 
   // Check if requested stock exists
   // If the current price is 0, then it is essentially non existent
-  if (content.c == 0) {
+  if (content.c === 0) {
     result.classList.add("error");
     result.textContent = `ERROR: ${input} does not exist`;
   } else {
