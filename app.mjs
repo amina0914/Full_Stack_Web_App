@@ -12,6 +12,7 @@ import { fetchAPI } from './controllers/controllerFetch.mjs';
 
 const app = express();
 const port = 3000;
+const single = new Singleton();
 
 // This is the homepage, in other words, the /public/index.html
 app.use(express.static('public'))
@@ -27,7 +28,6 @@ app.use(express.static('public'))
 
 //First endpoint that calls the singleton reading from a file to get all the symbols
 app.get('/Symbol', async (req, res) => {
-  let single = new Singleton();
   let data;
   try {
     data = await single.getInstance();
@@ -63,6 +63,8 @@ app.use('/', (req, res) => {
  * Start Server and listen on specified port
  * @param {Int} port Port that the server listens to
  */
-app.listen(port, () => {
-  console.log(`Testing app at http://localhost:${port}`);
-});
+if (single.getInstance() != null) {
+  app.listen(port, () => {
+    console.log(`Testing app at http://localhost:${port}`);
+  });
+}
