@@ -66,5 +66,7 @@ app.use('/', (req, res) => {
 single.getInstance().then(()=>{
   app.listen(port, ()=> {
     console.log(`Testing app at http://localhost:${port}`);
-  });
-});
+  })
+}).catch((e) => {
+  console.error(e.message); 
+})
