@@ -1,3 +1,11 @@
+/**
+ * This is the module that is responsible for the express. A server with 2 endpoints is created.
+ * This allows to get stocks' data from the file using the controllerIO module when 
+ * no specific stock name is provided. When the user gives one, it gets the specific data 
+ * about that stock using controllerFetch module.
+ * @Date: 02-11-2022
+ * @Author: Jacky Tat & Amina Turdalieva 
+ * */
 import express from 'express';
 import { Singleton } from './controllers/controllerIO.mjs';
 import { fetchAPI } from './controllers/controllerFetch.mjs';

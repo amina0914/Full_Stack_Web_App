@@ -1,3 +1,11 @@
+/**
+ * This is the script file that is responsible for linking the backend to the frontend 
+ * of the webpage. The fetching methods are used to fetch from the API the data about the stocks.
+ * Once the data is fetched, it is displayed to the user. 
+ * @Date: 02-11-2022
+ * @Author: Jacky Tat
+ * */
+
 "use strict";
 
 document.addEventListener('DOMContentLoaded', setup)
@@ -58,7 +66,7 @@ async function getStock(e) {
 
   // Check if requested stock exists
   // If the current price is 0, then it is essentially non existent
-  if (content.c == 0) {
+  if (content.c === 0) {
     result.classList.add("error");
     result.textContent = `ERROR: ${input} does not exist`;
   } else {

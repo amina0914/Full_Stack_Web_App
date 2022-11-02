@@ -1,12 +1,12 @@
 /**
  * This is a module that exports a function that reads a file information and returns it
- * @Date: 
- * @Author: Amina
+ * @Date: 02-11-2022
+ * @Author: Amina Turdalieva
  * */
 import * as fs from "fs/promises";
 
 /**
- * Validate File Path
+ * Validates File Path
  * @param {File} file File Object
  */
 export async function validate(file) {
@@ -29,7 +29,6 @@ export async function validate(file) {
 export async function read(file) {
   try {
     let data = await fs.readFile(file, "utf-8");
-    console.log("File read");
     return JSON.parse(data);
   } catch (err) {
     console.error(err.message);

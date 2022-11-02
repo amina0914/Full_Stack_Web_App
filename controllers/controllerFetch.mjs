@@ -1,3 +1,10 @@
+/**
+ * This is the module that exports a function fetching data from an API.
+ * It imports the key (which is a personal key to the api) from a module that 
+ * ensures protection of the key from the user.
+ * @Date: 02-11-2022
+ * @Author: Amina Turdalieva
+ * */
 import {key} from "./keys.mjs";
 import fetch from 'node-fetch';
 
