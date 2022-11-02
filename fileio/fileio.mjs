@@ -17,7 +17,6 @@ export async function validate(file) {
     if (valid) {
       stats = await fs.stat(file);
     }
-    console.log("File is valid!");
     return stats.isFile();
    
   } catch (e) {
