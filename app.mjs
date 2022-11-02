@@ -63,7 +63,7 @@ app.use('/', (req, res) => {
  * Start Server and listen on specified port
  * @param {Int} port Port that the server listens to
  */
-if (single.getInstance() != null) {
+if (single.getInstance() !== null) {
   app.listen(port, () => {
     console.log(`Testing app at http://localhost:${port}`);
   });
